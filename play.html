@@ -1,0 +1,169 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width">
+	<style>
+body {
+    max-width: 100%;
+    max-height:100%;
+}
+</style>
+	<style>
+		
+		body 
+		{
+			background:#e0e0e0;
+			font-family:arial,sans-serif;
+		}
+		.box
+		{
+			border-radius:5 5 5 5;
+			background:#f4f4f4;
+			border:1px solid #f0f0f0;
+			
+		}
+		
+		
+	</style>
+	
+	
+	<script>
+		// Check browser support
+		//document.getElementById("best").innerHTML = 0;
+		if (typeof(Storage) != "undefined")
+		  {
+			  // Store
+			  // Retrieve
+			  //document.getElementById("result").innerHTML=localStorage.getItem("lastname");
+			  var check_bs = localStorage.getItem("best_score");
+			 //alert(check_bs);
+			  if(!check_bs)
+			  {
+			  	window.location = "best_score.html";
+			  }
+			  else
+			  {
+			  //	alert("else");
+			  	document.getElementById("best").innerHTML = check_bs;
+			  }
+		  }
+		else
+		  {
+			  document.getElementById("result").innerHTML="Sorry, your browser does not support Web Storage...";
+		  }
+	</script>
+
+	<script src = "play.js"></script>
+	<script src = "move.js"></script>
+	
+</head>
+<body id = "bd" onkeydown = "move(event)" onload = "set()" >
+<center>
+<table width = "475"  style = "border:10px solid #202020; padding:10 15 10 15; background:#ffffff; box-shadow:2px 8px 8px 14px #a0a0a0;"
+ height = "100%">
+	<tr valign = "top">
+	<td  align = "left" style = "background:url('images/brick.png'); background-size:60% 60%;">
+	<font onclick = "reload()" style = "padding:3 6 3 6; background:#a90000; color:white; cursor:pointer; font-weight:bold;
+	font-size:80%; border-radius:4 4 4 4;"> new game </font>&emsp;
+		<font style = "background:#606060; color:white; padding:2 5 2 5; cursor:pointer; float:right; font-size:78%;" onclick = "easy_()" id = "el">
+	slow</font>
+	<font style = "background:#606060; color:white; padding:2 5 2 5; cursor:pointer; float:right; font-size:78%;" onclick = "medium_()" id = "ml">
+	medium</font>
+	<font style = "background:#606060; color:white; padding:2 5 2 5; cursor:pointer; float:right; font-size:78%;" onclick = "tough_()" id = "tl">
+	fast</font>
+	<hr size = "1" color = "white">
+
+
+	<table width = "100%" height = "5%" align = "center">
+	
+	<tr height = "50%" valign = "center">
+	
+	<td  align = "left" colspan = "2">
+		<font style = " color:black; font-size:100%; font-weight:bold; ">score </font>
+		<!--<input type = "text" id = "kj" value = "0" style = "border:1px solid white; width:40; font-size:60%; color:#505050;
+		height:100%;" />-->
+		<font id = "kj" style = "font-size:76%;"></font>
+		/
+		<font style = " color:black; font-size:100%; font-weight:bold;">best</font>&nbsp;
+	 <font id = "best" style = " font-size:76%; " /></font>
+	 <font onclick = "init()" style = "padding:2 7 2 7; background:#00a900; color:white; cursor:pointer; font-weight:bold;
+	font-size:80%; border-radius:4 4 4 4; float:right; "> start </font>&emsp;	
+	</td>
+	</tr>
+	</table>
+	
+	<!--
+	tl = tough level
+	el = easy level
+	-->
+		
+	<!--
+	game box
+	-->
+	
+	<table width = "100%" height = "88%" style = "border:1px solid #606060; font-size:140%; background:#ffffff; 
+text-shadow: 3px 3px black; color:white; " 
+	 cellspacing = "8">
+	<tr height = "11%" valign = "center">
+	<td width = "25%" class = "box" align = "center" id = "0" ></td>
+	<td width = "25%" class = "box" align = "center" id = "1"></td>
+	<td width = "25%" class = "box" align = "center" id = "2"></td>
+	<td width = "25%" class = "box" align = "center" id = "3"></td>
+	</tr>
+	<tr height = "11%" valign = "center">
+	<td width = "25%" class = "box" align = "center" id = "4"></td>
+	<td width = "25%" class = "box" align = "center" id = "5"></td>
+	<td width = "25%" class = "box" align = "center" id = "6"></td>
+	<td width = "25%" class = "box" align = "center" id = "7"></td>
+	</tr>
+	<tr height = "11%" valign = "center">
+	<td width = "25%" class = "box" align = "center" id = "8"></td>
+	<td width = "25%" class = "box" align = "center" id = "9"></td>
+	<td width = "25%" class = "box" align = "center" id = "10"></td>
+	<td width = "25%" class = "box" align = "center" id = "11"></td>
+	</tr>
+	<tr height = "11%" valign = "center">
+	<td width = "25%" class = "box" align = "center" id = "12"></td>
+	<td width = "25%" class = "box" align = "center" id = "13"></td>
+	<td width = "25%" class = "box" align = "center" id = "14"></td>
+	<td width = "25%" class = "box" align = "center" id = "15"></td>
+	</tr>
+	<tr height = "11%" valign = "center">
+	<td width = "25%" class = "box" align = "center" id = "16"></td>
+	<td width = "25%" class = "box" align = "center" id = "17"></td>
+	<td width = "25%" class = "box" align = "center" id = "18"></td>
+	<td width = "25%" class = "box" align = "center" id = "19"></td>
+	</tr>
+	<tr height = "11%" valign = "center">
+	<td width = "25%" class = "box" align = "center" id = "20"></td>
+	<td width = "25%" class = "box" align = "center" id = "21"></td>
+	<td width = "25%" class = "box" align = "center" id = "22"></td>
+	<td width = "25%" class = "box" align = "center" id = "23"></td>
+	</tr>
+	<tr height = "11%" valign = "center">
+	<td width = "25%" class = "box" align = "center" id = "24"></td>
+	<td width = "25%" class = "box" align = "center" id = "25"></td>
+	<td width = "25%" class = "box" align = "center" id = "26"></td>
+	<td width = "25%" class = "box" align = "center" id = "27"></td>
+	</tr>
+	<tr height = "11%" valign = "center">
+	<td width = "25%" class = "box" align = "center" id = "28"></td>
+	<td width = "25%" class = "box" align = "center" id = "29"></td>
+	<td width = "25%" class = "box" align = "center" id = "30"></td>
+	<td width = "25%" class = "box" align = "center" id = "31"></td>
+	</tr>
+	<tr height = "11%" valign = "center">
+	<td width = "25%" class = "box" align = "center" id = "32"></td>
+	<td width = "25%" class = "box" align = "center" id = "33"></td>
+	<td width = "25%" class = "box" align = "center" id = "34"></td>
+	<td width = "25%" class = "box" align = "center" id = "35"></td>
+	</tr>	
+	</table>
+	</td>
+	</tr>
+</table>
+	
+	
+</center>
+</body>
+
+</html>
