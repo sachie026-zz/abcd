@@ -1,0 +1,83 @@
+<html>
+<head>
+	<title>abcd</title>
+	<style>
+		body 
+		{
+			background:#e0e0e0;
+			font-family:arial,sans-serif;
+			max-width:100%;
+			max-height:100%;
+		}
+		
+	</style>
+	<script>
+		// Check browser support
+		function bs()
+		{
+			if (typeof(Storage) != "undefined")
+			  {
+				  var check_bs = localStorage.getItem("best_score");
+			  	document.getElementById("best").innerHTML = check_bs;
+			  }
+			else
+			  {
+				  document.getElementById("result").innerHTML="Sorry, your browser does not support Web Storage...";
+			  }
+		} 
+	</script>
+
+
+	
+</head>
+<body id = "bd" onkeydown = "move(event)" onload = "bs()" >
+<center>
+<table width = "475"  style = "border:10px solid #202020; padding:40 15 10 15; background:#ffffff; box-shadow:2px 8px 8px 14px #a0a0a0;
+background:url('images/brick.png');"
+height = "100%">
+	<tr valign = "top">
+	<td  align = "center">
+	<img src = "images/icon.png" height = "60" width = "50%"/>
+	<br>
+	<font style = "font-size:100%;  color:black; background:white;">let's create a row with letter's "abcd"</font>
+	<br><Br><br>
+
+	<table width = "90%" height = "50%" align = "center" style = "font-size:14; line-height:2; ">
+	<tr height = "25%">
+	<td align = "left">
+<font style = "font-weight:bold; font-size:200%; color:#000000; background:#c9deff; padding: 3 12 3 12; border:1px solid #b0d0ff;">best score</font>
+		<a href = "index.html"><img src = "images/home.png" width = "40" height = "43" style = "float:right;"/></a>
+		<hr color = "white" size = "1"><hr color = "white" size = "1">
+	</td>
+	</tr>
+	<tr height = "75%" valign = "center" style = "background:#f8f8f8; box-shadow:1px 4px 4px 6px #a0a0a0;">
+		<td align = "center" >
+			
+			<font style = "font-size:0; ">best</font><br>
+			<font id = "best" style = " font-size:580%; " /></font><br>
+			
+		</td>
+	</tr>
+	
+	</table>
+	<br><br><br><br>
+	<a href = "https://github.com/sachie026" style = "text-decoration:none; color:black;"><font style = "font-size:12;">sach @ 2014</font></a>
+	<Br>
+	<!--
+	tl = tough level
+	el = easy level
+	-->
+		
+	<!--
+	game box
+	-->
+	
+	</td>
+	</tr>
+</table>
+	
+	
+</center>
+</body>
+
+</html>
