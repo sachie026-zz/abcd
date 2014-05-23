@@ -1,0 +1,129 @@
+<html>
+<head>
+	<title>abcd</title>
+	<style>
+		body 
+		{
+			max-width:100%;
+			max-height:100%;
+			background:#e0e0e0;
+			font-family:arial,sans-serif;
+		
+		}
+		
+	</style>
+	<script src = "cordova.js"></script>
+	<script>
+		// Check browser support
+		if (typeof(Storage) != "undefined")
+		  {
+			  // Store
+			  // Retrieve
+			  //document.getElementById("result").innerHTML=localStorage.getItem("lastname");
+			  var check_bs = localStorage.getItem("best_score");
+			  //alert(check_bs);
+			  if(!check_bs)
+			  {
+			  	window.location = "best_score.html";
+			  }
+			  else
+			  {
+			  //	alert("else");
+			  	//document.getElementById("best").value = check_bs;
+			  }
+		  }
+		else
+		  {
+			  document.getElementById("result").innerHTML="Sorry, your browser does not support Web Storage...";
+		  }
+		  
+		  function play()
+			{
+				window.location = "play.html";
+			}
+			function inst()
+			{
+				window.location = "instructions.html";
+			}
+			function best()
+			{
+				window.location = "best.html";
+			}
+			function exit()
+			{
+				navigator.app.exitApp();
+			}
+	
+	</script>
+
+
+	
+</head>
+<body id = "bd" onkeydown = "move(event)"  >
+<center>
+<table width = "475"  style = "border:10px solid #202020; padding:40 15 10 15; background:#ffffff; box-shadow:2px 8px 8px 14px #a0a0a0;
+	background:url('images/brick.png');"
+
+height = "100%">
+	<tr valign = "top">
+	<td  align = "center">
+	<img src = "images/icon.png" height = "60" width = "50%"/>
+	<br>
+	<font style = "font-size:100%;  color:black; background:white;">let's create a row with letter's "abcd"</font>
+	<br><Br><br>
+
+	<table width = "90%" height = "60%" align = "center">
+	<tr height = "30%" valign = "center" >
+	<td  align = "center">
+	<!--
+		play game link button
+	-->
+		<button style = "background:#b0d0f9; color:white; font-weight:bold; font-size:25; width:100%; padding:5 5 5 5;
+		border:1px solid #4577ff; box-shadow:1px 1px 1px 2px #505050; border-radius:5 5 5 5; height:70%;" onclick = "play()">
+		play game</button>
+	</td>
+	</tr>
+	<tr height = "5%"></tr>
+	<tr height = "30%" valign = "center" >
+	<td  align = "center">
+	<!--
+		instructions link button
+	-->	
+		<button style = "background:#b0d0f9; color:white; font-weight:bold; font-size:25; width:100%; padding:5 5 5 5;
+		border:1px solid #4577ff; box-shadow:1px 1px 1px 2px #505050; border-radius:5 5 5 5; height:70%;" onclick = "inst()">
+		instructions</button>
+	</td>
+	</tr>
+	<tr height = "5%"></tr>	
+	<tr height = "30%" valign = "center" >
+	<td  align = "center">
+	<!--
+		best score link button
+	-->
+		<button style = "background:#b0d0f9; color:white; font-weight:bold; font-size:25; width:100%; padding:5 5 5 5;
+		border:1px solid #4577ff; box-shadow:1px 1px 1px 2px #505050; border-radius:5 5 5 5; height:70%;" onclick = "best()">
+		best score</button>
+	</td>
+	</tr>
+	</table>
+	<hr size = "1" color = "white">
+	<br>
+	<a href = "https://github.com/sachie026" style = "text-decoration:none; color:black;"><font style = "font-size:12;">sach @ 2014</font></a>
+	<!--
+	tl = tough level
+	el = easy level
+	-->
+		
+	<!--
+	game box
+	-->
+	
+	</td>
+	</tr>
+</table>
+	
+	
+</center>
+</body>
+
+</html>
