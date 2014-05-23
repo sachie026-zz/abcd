@@ -1,0 +1,93 @@
+<html>
+<head>
+	<title>abcd</title>
+	<style>
+		body 
+		{
+			background:#e0e0e0;
+			font-family:arial,sans-serif;
+		}
+		
+	</style>
+	<script>
+		// Check browser support
+		if (typeof(Storage) != "undefined")
+		  {
+			  // Store
+			  // Retrieve
+			  //document.getElementById("result").innerHTML=localStorage.getItem("lastname");
+			  var check_bs = localStorage.getItem("best_score");
+			  //alert(check_bs);
+			  if(!check_bs)
+			  {
+			  	window.location = "best_score.htm";
+			  }
+			  else
+			  {
+			  //	alert("else");
+			  	//document.getElementById("best").value = check_bs;
+			  }
+		  }
+		else
+		  {
+			  document.getElementById("result").innerHTML="Sorry, your browser does not support Web Storage...";
+		  }
+		  
+	</script>
+
+
+	
+</head>
+<body id = "bd" onkeydown = "move(event)" onload = "set()" >
+<center>
+<table width = "475"  style = "border:10px solid #202020; padding:10 15 10 15; background:#ffffff; box-shadow:2px 8px 8px 14px #a0a0a0;
+background:url('images/brick.png');"
+height = "100%">
+	<tr valign = "top">
+	<td  align = "center">
+	<img src = "images/icon.png" height = "60" width = "50%"/>
+	<br>
+	<font style = "font-size:100%;  color:black; background:white;">let's create a row with letter's "abcd"</font>
+	<br><Br><br>
+
+	<table width = "90%" height = "300" align = "center" style = "font-size:14; line-height:2; ">
+	<tr height = "25%">
+	<td align = "left" style = "">
+<font style = "font-weight:bold; font-size:25; color:#4577ff; ">instructions</font>
+		<a href = "index.html"><img src = "images/home.png" width = "40" height = "43" style = "float:right;"/></a>
+	</td>
+	</tr>
+	<tr height = "75%" valign = "top" style = "box-shadow:1px 3px 3px 4px #a0a0a0;  ">
+		<td align = "left" style = "text-align:justify; padding:5 8 5 8 ; background:#f8f8f8;">
+		
+		<b>user :</b> white colored blank box<br>
+		<b>task :</b> is to move the white colored box and arrange other boxes in "a b c d" order<br>
+		<b>play :</b> use arrow keys[left, right, up or down], if you enter left key then white colored box will move to the left and left box will move to right [similar for all directions]. After assigned time interval new row will appear at the top and all others will shift down by one row.<br>
+		<b>points :</b> earned when row with "a b c d" gets vanish, points will increase by 4. if new row comes in order "a b c d" it  vanishes automatically and points are given as bonus<br>
+		<b>speed :</b> time interval is 22 seconds for slow, 14 seconds for medium and 5 seconds for fast. you can change the speed while playing [by clicking one of the options i.e slow, medium, fast]<br> 
+		<b>game over : </b>game is over when all boxes reach to the bottom.
+		</td>
+	</tr>
+	
+	</table>
+	<hr size = "1" color = "white">
+	<br>
+	<a href = "https://github.com/sachie026" style = "text-decoration:none; color:black;"><font style = "font-size:12;">sach @ 2014</font></a>
+	<!--
+	tl = tough level
+	el = easy level
+	-->
+		
+	<!--
+	game box
+	-->
+	
+	</td>
+	</tr>
+</table>
+	
+	
+</center>
+</body>
+
+</html>
